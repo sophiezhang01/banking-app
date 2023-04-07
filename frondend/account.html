@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accountpage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/home.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-bottom: 5px solid whitesmoke;">
+        <div class="navbar-header">
+            <a href="home.html"><img class="logo" src="assets/Company-Logo.png" width="80" height="50"></a>
+        </div>
+        <span class="navbar-brand"><b>Maxx Bank</b></span>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ATMs/Locations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Help</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <div class="fa fa-search fa-2x" style="color: grey; margin-left: 10px; margin-right: 10px;"></div>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link" id="logout-btn" style="margin-right: 20px;">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <center><h1 id="dashboard">Checking Account</h1></center>
+        
+    <div id="account-area">
+        <div class="balance status" style="width: 300px; margin: auto;">
+            <h4 style="margin-left: 30px;">AccountId: 100006</h4>
+            <hr style="width: 260px; height: 5px; margin: auto; color: blue; background-color: aqua;">
+            <h4 style="margin-left: 45px;">Balance: <span style="color: aqua">$</span> <span id="current-balance" style="color: aqua">5000</span></h4>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="submit-area">
+                        <h5>Deposit Amount</h5>
+                        <input id="deposit-amount" type="text" class="form-control" placeholder="Enter deposit amount">
+                        <button id="deposit-btn" class="btn btn-success">Deposit</button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="submit-area">
+                        <h5>Withdraw Amount</h5>
+                        <input id="withdraw-amount" type="text" class="form-control" placeholder="Enter withdraw amount">
+                        <button id="withdraw-btn" class="btn btn-success">Withdraw</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer" style="border-bottom: 1px solid whitesmoke;">@2023 <u>MAXX Bank</u> All Rights Reserved.</div> 
+
+    <script src="account.js"></script>
+</body>
+</html>

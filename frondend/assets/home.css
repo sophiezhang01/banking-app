@@ -1,0 +1,169 @@
+body {
+  background-color: azure;
+  background-image: url('Company-Logo.png'); 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-image: url('Company-Logo.png'); 
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
+
+/* navbar logo */
+.logo {
+  margin-right: 10px;
+  margin-left: 20px;
+}
+
+.footer {
+  position: fixed;
+  padding: 10px; 
+  bottom: 0;
+  width: 100%;
+  height: 40px;   /* Height of the footer */
+  background: #3D3D3D;
+  text-align: center; 
+  font-size: 15px; 
+  color: white;
+}
+
+form {
+  margin: 0 auto;
+  width: 500px;
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+
+/* admin/UsersTable */
+#UsersTable {
+  padding: 5px;
+}
+/*
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li + li {
+  margin-top: 1em;
+}
+
+label {
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+*/
+
+input,
+textarea {
+  font: 1em sans-serif;
+  width: 200px;
+  box-sizing: border-box;
+  border: 1px solid #999;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #000; 
+}
+
+textarea {
+  vertical-align: top;
+  height: 5em;
+}
+
+.button {
+  padding-left: 90px;
+}
+
+button {
+  margin-left: .5em;
+}
+
+/* admin */
+#dashboard {
+  margin: 20px 0px -40px 0px;
+  color: #2f07d1;
+}
+
+#getUsersButton {
+  margin-left: 40px;
+  margin-right: 15px;
+}
+
+/* checking account */
+.form-control {
+  margin: 0;
+  display: inline-block;
+  width: 220px;
+}
+
+.btn {
+  display: inline-block;
+}
+
+.checkingtable {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.submit-area {
+  padding: 15px;
+  margin-top: 50px;
+  border-radius: 10px;
+  box-shadow: 5px 5px gray;
+  background-color: royalblue;
+  }
+
+#account-area {
+margin-top: 60px;
+}
+
+.balance {
+background-color: #454d55;
+}
+
+.status {
+margin: 0 20px;
+color: white;
+padding: 15px;
+border-radius: 10px;
+}
+
+/* home styling */
+.row {
+align-items: center;
+padding-left: 20px;
+padding-right: 20px;
+padding-top: 30px;
+margin: 20px;
+}
+
+.col-sm-4 {
+line-height: 15px;
+}
+
+.col-sm-4 h1 {
+font-size: 24pt;
+font-family: Helvetica Neue Light;
+color: #BB1F25;
+text-align: center;
+color: #453d3d;
+}
+
+.col-sm-4 p {
+font-size: 18pt;
+font-family: Baskerville;
+color: #BB1F25;
+text-align: center;
+}
+
+
+
+
+
+
+
+

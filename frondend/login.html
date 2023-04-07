@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            background-color: azure;
+            background-image: url('Company-Logo.png'); 
+            background-repeat: no-repeat; 
+            background-size: cover;
+            background-image: url('assets/Company-Logo.png'); 
+            background-repeat: no-repeat; 
+            background-size: cover;
+        }
+        .logo {
+            margin-right: 10px;
+            margin-left: 20px;
+        }
+        .container {
+            width: 500px;
+        }
+        .footer {
+            position: fixed;
+            padding: 10px; 
+            bottom: 0;
+            width: 100%; 
+            height: 40px;
+            background: #3D3D3D;
+            text-align: center; 
+            font-size: 15px; 
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-bottom: 5px solid whitesmoke;">
+        <div class="navbar-header">
+            <img class="logo" src="assets/Company-Logo.png" width="80" height="50">
+        </div>
+        <span class="navbar-brand"><b>Maxx Bank</b></span>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ATMs/Locations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Help</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <div class="fa fa-search fa-2x" style="color: grey; margin-left: 10px; margin-right: 10px;"></div>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="home.html" style="margin-right: 20px; padding: 6px 12px; border-radius: 25px; background: #EAF0F6; color: black; background-clip: padding-box;"><b>Sign In</b>
+                             <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mt-5">
+                    <h5 class="card-header" style="background-color: rgb(56, 215, 162);"><p id="greetings"></p><p>Please sign in to manage your accounts.</p></h5>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control" id="username">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <a href="home.html" class="btn btn-success" type="submit" id="login-btn">Submit</a>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <p class="card-text">Don't have an account? <a href="register.html" class="card-link"><b>Register</b></a></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer" style="border-bottom: 1px solid whitesmoke;">@2023 <u>MAXX Bank</u> All Rights Reserved.</div> 
+    
+   <script>
+        var myDate = new Date();
+        var hrs = myDate.getHours();
+
+        var greet;
+
+        if (hrs < 12)
+        greet = 'Good Morning!';
+        else if (hrs >= 12 && hrs <= 17)
+        greet = 'Good Afternoon!';
+        else if (hrs >= 17 && hrs <= 24)
+        greet = 'Good Evening!';
+
+        document.getElementById('greetings').innerHTML ='<b>' + greet + '</b>';
+    </script> 
+    <script src="login.js"></script>
+</body>
+</html>

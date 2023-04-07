@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adminpage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/home.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-bottom: 5px solid whitesmoke;">
+        <div class="navbar-header">
+            <a href="home.html"><img class="logo" src="assets/Company-Logo.png" width="80" height="50"></a>
+        </div>
+        <span class="navbar-brand"><b>Maxx Bank</b></span>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ATMs/Locations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Help</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <div class="fa fa-search fa-2x" style="color: grey; margin-left: 10px; margin-right: 10px;"></div>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link" id="logout-btn" style="margin-right: 20px;">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <center><h2 id="dashboard">Welcome to the <u>MAXX Bank</u> Admin Dashboard!</h2></center>
+        <br>
+        <div id="table-row" class="row">
+            <table id="UsersTable" class="table table-hover table-bordered table-dark">
+                <thead>
+                    <tr>
+                        <th>User_Id</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>First_Name</th>
+                        <th>Last_Name</th>
+                        <th>Email</th>
+                    <!--    <th>User_Role_Id</th>  -->
+                    </tr>
+                </thead>
+                <tbody id="UsersBody">
+                    <!--We'll leave this blank: it will be filled by our JS when data comes in-->
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <button id="getUsersButton" class="btn btn-primary">Show Users</button>
+        
+        <button id="getUsersbyuser_idButton" class="btn btn-primary">Show User by ID No.:</button>
+        <input class="form-control searchBar" id='myInput' onkeyup="searchTable()" type="text" name="search" placeholder="search" style="width: 80px;">
+    </div>
+
+    <div class="footer" style="border-bottom: 1px solid whitesmoke;">@2023 <u>MAXX Bank</u> All Rights Reserved.</div> 
+
+    <script src="admin.js"></script>
+</body>
+</html>
