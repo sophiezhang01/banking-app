@@ -13,8 +13,9 @@ public class Driver {
 
 	public static void main(String[] args) {
 		
-		    	UserController uc = new UserController();
-		    	AccountController ac = new AccountController();
+				AuthController ac = new AuthController();
+				UserController uc = new UserController();
+		    //	AccountController ac = new AccountController();
 		    	AuthController atc = new AuthController();
 		    	
 		    	
@@ -34,16 +35,18 @@ public class Driver {
 					).start(3000);
 		    	
 		    	
-		    	app.post("/login", atc.loginHandler);
+		    	app.post("/login", ac.loginHandler);
 		    	app.get("/user",  uc.getAllUsersHandler);
 				app.post("/user", uc.insertUserHandler);
 				app.get("/user/{userId}", uc.getAllUsersByIdHandler);
 				app.put("/user/{userId}", uc.updateUserHandler);
+				app.delete("/user/{userId}", uc.deleteUserHandler);
+				app.get("/user/username/{username}", uc.getUserByUsernameHandler);
 				
-				app.get("/account",  ac.getAllAccountsHandler);
-				app.post("/account", ac.insertAccountHandler);
-				app.get("/account/{accountId}", ac.getAccountByIdHandler);
-				app.put("/account/{accountId}", ac.updateAccountHandler);
+//				app.get("/account",  ac.getAllAccountsHandler);
+//				app.post("/account", ac.insertAccountHandler);
+//				app.get("/account/{accountId}", ac.getAccountByIdHandler);
+//				app.put("/account/{accountId}", ac.updateAccountHandler);
 									
 			}
 

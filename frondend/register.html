@@ -41,7 +41,7 @@
         <div class="navbar-header">
             <img class="logo" src="assets/Company-Logo.png" width="80" height="50">
         </div>
-        <span class="navbar-brand"><b>Maxx Bank</b></span>
+        <span class="navbar-brand"><b>MAXX Bank</b></span>
         
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
@@ -65,11 +65,11 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container" id="text">
         <div class="row">
             <div class="col-12">
-                <div class="card mt-5">
-                    <h5 class="card-header text-center" style="background-color: rgb(56, 215, 162);">Register New User</h5>
+                <div class="card mt-4">   <!-- mt-4 is margin top 4. -->
+                    <h5 class="card-header text-center" style="background-color: rgb(56, 215, 162);"><b>Registration</b></h5>
                     <div class="card-body">
                         <form>
                             <div class="row">
@@ -89,14 +89,14 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label for="firstname">First name</label>
-                                        <input type="text" class="form-control" id="firstname">
+                                        <label for="fname">First name</label>
+                                        <input type="text" class="form-control" id="fname">
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label for="lastname">Last name</label>
-                                        <input type="text" class="form-control" id="lastname">
+                                        <label for="lname">Last name</label>
+                                        <input type="text" class="form-control" id="lname">
                                     </div>
                                 </div>
                             </div>
@@ -109,18 +109,18 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label for="role">Select role</label>
-                                        <select class="form-control" id="role">
+                                        <label for="role_id">Select role</label>
+                                        <select class="form-control" id="role_id">
                                             <option value="">~~Choose An Option~~</option>
-                                            <option value = "EMPLOYEE">Customer</option>
-                                            <option value = "FINANCE_MANAGER">Manager</option>
+                                            <option value = "1">Customer</option>
+                                            <option value = "2">Manager</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <a href="login.html" class="btn btn-success" type="submit" id="login-btn">Submit</a>
+                                    <button id="createButton" class="btn btn-success" onclick="myFunction()"><b>Create New User</b></button>
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -137,6 +137,11 @@
 
     <div class="footer" style="border-bottom: 1px solid whitesmoke;">@2023 <u>MAXX Bank</u> All Rights Reserved.</div> 
 
+    <script>
+        function myFunction() {
+          alert("New user was added successfully!");
+        }
+    </script>
     <script src="register.js"></script>
 </body>
 </html>

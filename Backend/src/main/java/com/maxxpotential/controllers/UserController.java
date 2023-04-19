@@ -36,6 +36,44 @@ public class UserController {
 		}
 	};
 	
+	public Handler getAllUsersByIdHandler = (ctx) -> {
+		if(ctx.req.getSession(true) !=null) {
+			
+			int userId = Integer.parseInt(ctx.pathParam("userId"));
+			
+			User UsersById = us.getUserById(userId);
+			
+			Gson gson = new Gson();
+						
+			String JSONUsers = gson.toJson(UsersById);
+			
+			ctx.result(JSONUsers);
+			ctx.status(200);
+			
+		} else {
+			ctx.result("Oh no you failed to get the user!!!");
+			ctx.status(404);
+		}
+	};
+	
+	public Handler getUserByUsernameHandler = ctx -> {
+        if(ctx.req.getSession() != null) {
+	        try {	
+	            String username =ctx.pathParam("username") ;
+	            List<User> user = us.getUserByUsername(username);
+	            Gson gson = new Gson();
+	            String JSONEmployees = gson.toJson(user);
+	            ctx.result(JSONEmployees);
+	            ctx.status(200);
+	        }
+	        catch(Exception e) {
+				ctx.status(404);	
+			}
+        } 
+		else {
+			ctx.status(403);
+		}
+    };	
 	
 	public Handler insertUserHandler = (ctx) ->{
 		if(ctx.req.getSession(true) !=null) {
@@ -56,32 +94,11 @@ public class UserController {
 			ctx.status(404);
 		}
 	};
-	
-	public Handler getAllUsersByIdHandler = (ctx) -> {
-		if(ctx.req.getSession(true) !=null) {
-			
-			int userId = Integer.parseInt(ctx.pathParam("userId"));
-			
-			User UsersById = us.getUserById(userId);
-			
-			Gson gson = new Gson();
-						
-			String JSONUsers = gson.toJson(UsersById);
-			
-			ctx.result(JSONUsers);
-			ctx.status(200);
-			
-		} else {
-			ctx.result("Oh no you failed to get the user!!!");
-			ctx.status(404);
-		}
-	};
 
 	public Handler updateUserHandler = (ctx) -> {
 		if(ctx.req.getSession(true) !=null) {
 			
-			
-		int users_id = Integer.parseInt(ctx.pathParam("users_id"));
+		int userId = Integer.parseInt(ctx.pathParam("userId"));
 			
 		Gson gson = new Gson();
 			
@@ -100,6 +117,24 @@ public class UserController {
 			ctx.result("Oh no you failed to update the user!!!");
 			ctx.status(404);
 		}
+	};
+	
+	public Handler deleteUserHandler = ctx -> {
+		if(ctx.req.getSession() != null) {
+			try {	
+	            int userId = Integer.parseInt(ctx.pathParam("userId"));
+		        System.out.println(userId);	        
+				us.deleteUser(userId);
+				ctx.status(202);
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+				ctx.status(404);	
+			}
+		} 
+		else {
+			ctx.status(403);
+		}	
 	};
 
 }

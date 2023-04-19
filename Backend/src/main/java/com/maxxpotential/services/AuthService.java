@@ -1,17 +1,29 @@
 package com.maxxpotential.services;
 
+import java.util.List;
+import com.maxxpotential.models.User;
+import com.maxxpotential.repositories.UserDAO;
+
 public class AuthService {
+	UserDAO uDAO = new UserDAO();
 	
-public boolean login(String username, String password) {
-		
-		//this is hardcoding - telling Java exactly what values make for a valid login
-		//in reality, you'll check the database for a username/password to see if a record exists
-		if(username.equals("revature1") && password.equals("password")) {
-			
-			return true; //true indicates successful login
-			
-		}
-		
-		return false; //unsuccessful login
-	}
+	public int login(String username, String password) {   
+    	List<User> CheckUsername = uDAO.getUserByUsername(username);
+    	try{
+    		User Check = CheckUsername.get(0);
+    		String Username = Check.getUsername();
+        	String Password = Check.getPassword();
+            if (Username.equals(username) && Password.equals(password)) {
+            	return 1;
+            }
+            else {
+            	return 0;
+            }
+    	}
+    	catch(IndexOutOfBoundsException e) {
+    		System.out.println("That Username or Password didn't match our system");
+    		return 0;
+    	}
+    	
+    }
 }

@@ -13,6 +13,20 @@ public class UserService {
 		return users;  //return the list of users
 	}
 
+	public User getUserById(int id) {
+		User user= uDAO.getUserById(id);
+		return user;
+	}
+	
+	public List<User> getUserByUsername(String username) throws Exception {
+		List<User> result = uDAO.getUserByUsername(username);
+		if(result.get(0).getId() != 0) {
+			return result;
+		}
+		else {
+			throw new Exception();
+		}
+	}
 	
 	public void insertUser(User newUser) {
 		
@@ -21,15 +35,12 @@ public class UserService {
 		uDAO.insertUser(newUser);
 	}
 	
-	public User getUserById(int id) {
-		
-		User user= uDAO.getUserById(id);
-		return user;
+	public User updateUser(User user) {
+		return uDAO.updateUser(user);
 	}
 	
-	public User updateUser(User user) {
-		
-		return uDAO.updateUser(user);
+	public void deleteUser(int id) {
+		uDAO.deleteUser(id);
 	}
 	
 }
